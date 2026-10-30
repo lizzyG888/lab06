@@ -307,7 +307,35 @@ ggplot(df1, aes(x = ppsr, y = winpercent, colour = type)) +
 Modify your plot in Exercise 8 to facet by whether a candy is bar-shaped. Have the color reflect whether the candy is fruity or not. The plot must include x and y labels along with a title. How do these plots compare to each other?
 
 ```{r}
-# your code here
+
+df1 = candy_df %>%
+  mutate(ppsr = pricepercent/sugarpercent,
+         type = case_when(
+           competitorname == "One quarter" ~ TRUE,
+           competitorname == "One dime" ~ TRUE,
+           TRUE ~ FALSE
+         )) %>%
+  filter(type == FALSE)
+
+ggplot(df1, aes(x = ppsr, y = winpercent, colour = fruity)) +
+  geom_point() +
+  scale_colour_manual(values = c("TRUE" = "pink", "FALSE" = "lightblue"),
+                    labels = c("TRUE" = "Yes", "FALSE" = "No")) +
+  theme_bw() +
+  labs(
+    title = "price per sugar ratio against winpercent",
+    y = "Win %",
+    x = "Price per Sugar Ratio",
+    colour = "Is it fruity?"
+  ) +
+  facet_wrap(~bar, labeller = as_labeller(c(
+    "TRUE" = "Bar",
+    "FALSE" = "Not Bar"))) +
+  geom_smooth(method = lm, se = FALSE)
+  
+
+
+
 
 ```
 
