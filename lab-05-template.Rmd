@@ -420,7 +420,16 @@ ggplot(data= staff_long, mapping = aes(x = years, y = percent, colour = faculty_
 # Write your code for Exercise 6 here
 
 
-
+ggplot(data= staff_long, mapping = aes(x = years, y = percent, colour = faculty_type)) +
+  geom_line() +
+  scale_colour_manual(values = c("Full-Time Tenured Faculty" = "pink", "Full-Time Tenure-Track Faculty" = "palevioletred", "Full-Time Non-Tenure-Track Faculty" = "lightblue", "Part-Time Faculty" = "plum", "Graduate Student Employees" = "peachpuff")) +
+  theme_bw() +
+  labs(
+    title = "Staff employment trends",
+    y = "%",
+    x = "Years",
+    colour = "Employment type"
+  )
 
 ```
 
