@@ -368,9 +368,9 @@ How many observations are there in the data set? - 12
 
 staff_long <- staff %>%
   pivot_longer(
-    cols = c(`1975`, `1989`, `1993`, `1999`, `2001`,
+    cols = c(`1975`, `1989`, `1993`,`1995`, `1999`, `2001`,
              `2003`, `2005`, `2007`, `2009`, `2011`),
-    names_to = "Years",
+    names_to = "years",
     values_to = "percent"
   )
 ```
@@ -381,14 +381,16 @@ staff_long <- staff %>%
 ```{r dot-plot}
 # Write your code for Exercise 3 here
 
-
+ggplot(data= staff_long, mapping = aes(x = years, y = percent, colour = faculty_type)) +
+  geom_point()
 
 ```
 
 ## Exercise 4
 
 ```{r bad-line-plot}
-# Write your code for Exercise 4 here
+ggplot(data= staff_long, mapping = aes(x = years, y = percent, colour = faculty_type)) +
+  geom_line()
 
 
 
@@ -397,17 +399,18 @@ staff_long <- staff %>%
 ## Exercise 5
 
 ```{r mutate-year}
-## Uncomment and complete the following code
 
-#staff_long <- staff_long %>%
-#  mutate(year = ______(year))
+
+staff_long <- staff_long %>%
+  mutate(years = as.numeric(years))
 ```
 
 
 ```{r working-line-plot}
 # Write your code for Exercise 5 here
 
-
+ggplot(data= staff_long, mapping = aes(x = years, y = percent, colour = faculty_type)) +
+  geom_line()
 
 ```
 
