@@ -254,7 +254,20 @@ ggplot(die, aes(x = pricepercent, y = winpercent, colour = chocolate)) +
 Are chocolate candies more likely to be candy bars? Make a filled bar plot with chocolate on the x-axis and fill = bar. Describe what you see.
 
 ```{r}
-# Your code here
+
+
+ggplot(candy_df, aes(x = chocolate, fill = bar)) +
+  geom_bar() +
+  theme_bw() +
+  labs(
+    fill = "Is it a bar?",
+    x = "Does it contain chocolate?",
+    y = "Count"
+  ) +
+  scale_fill_manual(values = c(
+  "TRUE" = "pink",
+  "FALSE" = "lightblue"
+))
 
 ```
 
