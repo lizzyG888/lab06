@@ -190,6 +190,19 @@ ggplot(die, aes(x = winpercent, fill = chocolate)) +
     fill = "Is there chocolate?"
   )
 
+
+ggplot(die, aes(x = winpercent, fill = fruity)) +
+  geom_histogram(binwidth = 5, position = "identity", alpha = 0.6) +
+  scale_fill_manual(values = c("TRUE" = "pink", "FALSE" = "lightblue"),
+                    labels = c("TRUE" = "Yes", "FALSE" = "No")) +
+  theme_bw() +
+  labs(
+    title = "Win % spread by --- presence",
+    x = "Win %",
+    y = "Candy count",
+    fill = "Is there ---?"
+  )
+
 ```
 
 - Consider the similar pair by replacing chocolate with caramel, fruity and compare their results. 
