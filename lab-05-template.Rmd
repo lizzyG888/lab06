@@ -174,7 +174,21 @@ ggplot(candy_df, aes(x = winpercent, fill = caramel)) +
 Create a visualization that examines the relationship between a candy’s win percentage and whether it contains chocolate. Include x and y labels and a title. Describe any relationship you see.
 
 ```{r}
-# your code here
+
+
+die = candy_df %>% filter(!is.na(chocolate))
+
+ggplot(die, aes(x = winpercent, fill = chocolate)) +
+  geom_histogram(binwidth = 5, position = "identity", alpha = 0.6) +
+  scale_fill_manual(values = c("TRUE" = "pink", "FALSE" = "lightblue"),
+                    labels = c("TRUE" = "Chocolate", "FALSE" = "No Chocolate")) +
+  theme_bw() +
+  labs(
+    title = "Win % spread by chocolate presence",
+    x = "Win %",
+    y = "Candy count",
+    fill = "Is there chocolate?"
+  )
 
 ```
 
