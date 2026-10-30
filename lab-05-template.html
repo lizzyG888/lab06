@@ -683,20 +683,19 @@ ggplot(df1, aes(x = ppsr, y = winpercent, colour = fruity)) +
 <h2>Exercise 1</h2>
 <p>What is the difference between <em>wide format</em> data and <em>long
 format</em> data?</p>
-<p>Is the format <code>staff</code> data <em>wide</em> or
-<em>long</em>?</p>
-<p>How many observations are there in the data set?</p>
+<p>Is the format <code>staff</code> data <em>wide</em> or <em>long</em>?
+- wide</p>
+<p>How many observations are there in the data set? - 12</p>
 </div>
 <div id="exercise-2-1" class="section level2">
 <h2>Exercise 2</h2>
-<pre class="r"><code>## Uncomment and complete the following code
-
-#staff_long &lt;- ___ %&gt;%
-#  ___(
-#    cols = ____, 
-#    names_to = &quot;_____&quot;,
-#    values_to = &quot;percent&quot;
-#    )</code></pre>
+<pre class="r"><code>staff_long &lt;- staff %&gt;%
+  pivot_longer(
+    cols = c(`1975`, `1989`, `1993`, `1999`, `2001`,
+             `2003`, `2005`, `2007`, `2009`, `2011`),
+    names_to = &quot;Years&quot;,
+    values_to = &quot;percent&quot;
+  )</code></pre>
 </div>
 <div id="exercise-3-1" class="section level2">
 <h2>Exercise 3</h2>
