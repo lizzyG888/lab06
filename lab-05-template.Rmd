@@ -119,7 +119,21 @@ ggplot(candy_rankings, aes(x = chocolate)) +
 Now look at a numerical variable, such as `winpercent`. Create an histogram for this variable using ggplot2 functions below. Include informative x and y labels and a title, as a good practice.
 
 ```{r}
-# Your code here
+ ggplot(candy_rankings, aes(x = winpercent)) +
+ geom_histogram(fill = "pink") +
+  labs(
+    title = "Histogram of win percent",
+    x = "win percent %?"
+  )
+
+ ggplot(candy_rankings, aes(x = winpercent)) +
+ geom_histogram(fill = "lightblue", binwidth = 20) +
+  labs(
+    title = "Histogram of win percent",
+    x = "win percent %?"
+  )
+
+
 
 ```
 
