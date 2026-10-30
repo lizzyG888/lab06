@@ -224,7 +224,23 @@ candy_rankings %>%
 Do more expensive candies win more often? Make a scatterplot of pricepercent (x) against winpercent (y). Describe their relationship.  
 
 ```{r}
-# your code here
+
+ggplot(die, aes(x = pricepercent, y = winpercent, colour = chocolate)) +
+  geom_point() +
+  facet_wrap(~bar, labeller = as_labeller(c(
+    "TRUE" = "Bar",
+    "FALSE" = "Not Bar"))) +
+  scale_fill_manual(values = c("TRUE" = "pink", "FALSE" = "lightblue"),
+                    labels = c("TRUE" = "Yes", "FALSE" = "No")) +
+  theme_bw() +
+  labs(
+    title = "Do more expensive candies win more often",
+    y = "Win %",
+    x = "Price %",
+    colour = "Is there chocolate?"
+  ) + 
+  geom_smooth(method = lm, se = FALSE)
+
 
 ```
 
