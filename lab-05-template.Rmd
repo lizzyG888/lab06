@@ -21,7 +21,7 @@ library(ggplot2)
 knitr::include_graphics("img/Speaking-the-world.jpg")
 ```
 
-_Write your comments about image 1 below_
+_Volumes of rectangles are not proportional to the data its showing, the varying colours do not seem to represent any data so just seem confusing. you could create this with a bar or col graph._
 
 
 
@@ -32,7 +32,7 @@ _Write your comments about image 1 below_
 knitr::include_graphics("img/rose-pop-density-total-area-bw.jpg")
 ```
 
-_Write your comments about image 2 below_
+_There are no numerical values to show if the proportions seem correct and the colouring seems off as the shade of each sector seems to be assigned at random rather than highlighting the smallest vs largest proportions etc..._
 
 
 
@@ -43,7 +43,7 @@ _Write your comments about image 2 below_
 knitr::include_graphics("img/life-expectancy-rule-of-law.png")
 ```
 
-_Write your comments about image 3 below_
+_The scatter graph seems messy as the plots overlap and yet each point contains data. It seems like each point has varying colour and size which may have some meaning, but there is no key to demonstrate this, also the axes have no values to actually read the data. _
 
 
 
@@ -54,7 +54,7 @@ _Write your comments about image 3 below_
 knitr::include_graphics("img/global-income-dist.PNG")
 ```
 
-_Write your comments about image 4 below_
+_Clearly identifies each country and colour codes each are/slope for each, seems very clear._
 
 
 
@@ -83,7 +83,7 @@ glimpse(candy_df)
 How many observations and variables are in this dataset?
 Did you identify the type of variables, remember that this detail is crucial to create which kind of data visualization in general. 
 
-_Write your comments about results_
+_There are 13 variables and 85 observations, the data types included are double, logical and character._
 
 # Data viz - One variable at a time
 
